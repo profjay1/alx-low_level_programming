@@ -1,12 +1,9 @@
 #include <stdio.h>
-
 /**
+ * main - init
  *
- *  * main - init
- *
- *   * Return: 0
- *
- *   */
+ * Return: 0
+ */
 
 int main(void)
 {
