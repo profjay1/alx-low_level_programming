@@ -15,6 +15,8 @@ int main(void)
 		while (ch == 'e' || ch == 'q')
 		{
 			continue;
+
+			ch++;
 		}
 			putchar(ch);
 
