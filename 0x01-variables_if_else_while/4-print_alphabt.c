@@ -15,11 +15,14 @@ int main(void)
 		while (ch == 'e' || ch == 'q')
 		{
 			continue;
+			
+			putchar(ch);
 
 			ch++;
-		
-			putchar(ch);
 		}
+		
+		putchar(ch);
+		
 
 	putchar('\n');
 
