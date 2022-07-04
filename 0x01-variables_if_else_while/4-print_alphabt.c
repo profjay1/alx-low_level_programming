@@ -13,13 +13,14 @@ int main(void)
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
 		while (ch == 'e' || ch == 'q')
-		
+		{
 			continue;
-		
+		}
 			putchar(ch);
-	}
 
 	putchar('\n');
+
+	}
 
 	return (0);
 }
