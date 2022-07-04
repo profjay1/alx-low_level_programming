@@ -12,18 +12,15 @@ int main(void)
 
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
-		while (ch == 'q' || ch == 'e')
+		while (ch == 'e' || ch == 'q')
 		{
 			continue;
 			ch++;
 		}
-		
+
 		putchar(ch);
-		
-
-	putchar('\n');
-
 	}
+	putchar('\n');
 
 	return (0);
 }
