@@ -18,17 +18,15 @@ int main(void)
 			{
 				if (a == 7 && b == 8 && c == 9)
 				 {
-					 printf("%d%d%d", a, b, c);
-			       	 }
+					 printf ("%d%d%d", a, b, c);
 				else
-				{
-					printf("%d%d%d, ", a, b, c);
-				}
+				 {
+					 printf("%d%d%d, ", a, b, c);
+				 }
 			}
 		}
 	}
-
 	putchar('\n');
 
 	return (0);
-}	
+}
