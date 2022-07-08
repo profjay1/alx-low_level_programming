@@ -28,12 +28,14 @@ int main(void)
 
 		printf("%d is negative\n", n);
 
-	else if (n == 0)
+       	if (n == 0)
 
 		printf("%u is zero\n", n);
 
-	else
+	if
+	{
 		printf("%u is positive\n", n);
+	}
 
 	return ('0');
 }
