@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_to_98 - prints al natural numbers from n to 98.
@@ -43,13 +44,13 @@ void print_to_98(int n)
 			}
 			else
 			{
-				putchar(',');
+				_putchar(',');
 
-				putchar(' ');
+				_putchar(' ');
 
 				n--;
 			}
 		}
-		putchar('\n');
+		_putchar('\n');
 	}
 }
