@@ -6,7 +6,6 @@
  * Return: 0
  */
 
-
 int main(void)
 {
 	
@@ -18,7 +17,7 @@ int main(void)
 
 	/*while (i < 10)*/
 	/*{*/
-	/*putchar(i);*/
+		/*putchar(i);*/
 	/*}*/
 
 	printf("Infinite loop avoided! \\o/\n");
