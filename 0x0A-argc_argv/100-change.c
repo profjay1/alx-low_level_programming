@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 		while (value >= 2)
 		{
 			value -= 2;
-			
+	
 			num_of_coins++;
 		}
 		while (value >= 1)
