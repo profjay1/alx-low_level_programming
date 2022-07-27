@@ -50,11 +50,9 @@ char **strtow(char *str)
 	if (str == 0 || *str == 0)
 		return (NULL);
 	words_in_str = count_words(str);
-
 	if (words_in_str == 0)
 		return (NULL);
 	arr = malloc((words_in_str + 1) * sizeof(char *));
-
 	if (arr == 0)
 		return (NULL);
 
@@ -71,7 +69,6 @@ char **strtow(char *str)
 				str++;
 			}
 			arr[index] = malloc((len_word + 1) * sizeof(char));
-			
 			while (*found_word != 32 && *found_word != '\0')
 			{
 				arr[index][sub_index] = *found_word;
