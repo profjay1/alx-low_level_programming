@@ -24,115 +24,65 @@ int count_words(char *s)
 			{
 				s++;
 			}
-
-																				words++;
-
-																						}
-
-											}
-
-				return (words);
-
+			words++;
+		}
+	}
+	return (words);
 }
-
 
 
 /**
+ * strtow - splits a string into words
  *
- *  * strtow - splits a string into words
+ * @str: string to be splited
  *
- *   * @str: string to be splited
+ * Return: pointer to an array of strings
  *
- *    * Return: pointer to an array of strings
- *
- *     *
- *
- *      * I HAVE TO REMOVE SOME {} BECAUSE OF BETTY
- *
- *       */
+ * I HAVE TO REMOVE SOME {} BECAUSE OF BETTY
+ */
 
 char **strtow(char *str)
-
 {
+	int index = 0, sub_index = 0;
+	int words_in_str = 0, len_word = 0;
+	char **arr, *found_word;
 
-		int index = 0, sub_index = 0;
+	if (str == 0 || *str == 0)
+		return (NULL);
+	words_in_str = count_words(str);
 
-			int words_in_str = 0, len_word = 0;
+	if (words_in_str == 0)
+		return (NULL);
+	arr = malloc((words_in_str + 1) * sizeof(char *));
 
-				char **arr, *found_word;
+	if (arr == 0)
+		return (NULL);
 
-
-
-					if (str == 0 || *str == 0)
-
-								return (NULL);
-
-						words_in_str = count_words(str);
-
-							if (words_in_str == 0)
-
-										return (NULL);
-
-								arr = malloc((words_in_str + 1) * sizeof(char *));
-
-									if (arr == 0)
-
-												return (NULL);
-
-										for (; *str != '\0' && index < words_in_str;)
-
-												{
-
-															if (*str == 32)
-
-																			str++;
-
-																	else
-
-																				{
-
-																								found_word = str;
-
-																											for (; *str != 32 && *str != '\0';)
-
-																															{
-
-																																				len_word++;
-
-																																								str++;
-
-																																											}
-
-																														arr[index] = malloc((len_word + 1) * sizeof(char));
-
-																																	while (*found_word != 32 && *found_word != '\0')
-
-																																					{
-
-																																										arr[index][sub_index] = *found_word;
-
-																																														found_word++;
-
-																																																		sub_index++;
-
-																																																					}
-
-																																				arr[index][sub_index] = '\0';
-
-																																							index++;
-
-																																										sub_index = 0;
-
-																																													len_word = 0;
-
-																																																str++;
-
-																																																		}
-
-																		}
-
-											return (arr);
-
+	for (; *str != '\0' && index < words_in_str;)
+	{
+		if (*str == 32)
+			str++;
+		else
+		{
+			found_word = str;
+			for (; *str != 32 && *str != '\0';)
+			{
+				len_word++;
+				str++;
+			}
+			arr[index] = malloc((len_word + 1) * sizeof(char));
+			
+			while (*found_word != 32 && *found_word != '\0')
+			{
+				arr[index][sub_index] = *found_word;
+				found_word++;
+				sub_index++;
+			}
+			arr[index][sub_index] = '\0';
+			index++;
+			sub_index = 0;
+			len_word = 0;
+			str++;
+		}
+		return (arr);
 }
-
-Footer
