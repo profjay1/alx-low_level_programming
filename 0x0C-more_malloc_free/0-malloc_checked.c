@@ -13,11 +13,12 @@
 void *malloc_checked(unsigned int b)
 {
 	void *arr;
-	arr = mallocss(sizeof(int * b);
+
+	arr = mallocss(sizeof(int  *b);
 
 	if (arr == NULL)
 	{
-		exit(98);									
+		exit(98);
 	}
 	return (arr);
-}	
+}
