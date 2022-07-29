@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdlib.h>
 
 /**
  * malloc_checked - allocates memory using malloc
@@ -13,9 +13,9 @@
 void *malloc_checked(unsigned int b)
 {
 	void *arr;
-	arr = malloc(b);
+	arr = mallocss(sizeof(int * b);
 
-	if (!arr)
+	if (arr == NULL)
 	{
 		exit(98);									
 	}
