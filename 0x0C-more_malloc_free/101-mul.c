@@ -74,7 +74,6 @@ int *multiply(char *n1, int l1, char *n2, int l2, int lr)
 	int carry, value1, value2, product;
 
 	final_result = calloc(sizeof(int), lr);
-
 	while (i < l1)
 	{
 		mult_result = calloc(sizeof(int), lr);
