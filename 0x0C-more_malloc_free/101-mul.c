@@ -100,145 +100,83 @@ int *multiply(char *n1, int l1, char *n2, int l2, int lr)
 		add_arrays(mult_result, final_result, lr);
 		free(mult_result);
 		i++;
-
-																																	multiplier_digit_position--;
-
-																																		}
-
-											return (final_result);
-
+		multiplier_digit_position--;
+	}
+	return (final_result);
 }
 
 
-
 /**
+ * print_result - print final array
  *
- *  * print_result - print final array
+ * @result: pointer to final array
  *
- *   * @result: pointer to final array
- *
- *    * @len_result: length fo the final array
- *
- *     */
+ * @len_result: length fo the final array
+ */
 
 void print_result(int *result, int len_result)
-
 {
+	int i = 0;
 
-		int i = 0;
-
-
-
-			while (result[i] == 0 && i < len_result)
-
-					{
-
-								i++;
-
-									}
-
-				if (i == len_result)
-
-						{
-
-									_putchar('0');
-
-										}
-
-					while (i < len_result)
-
-							{
-
-										_putchar(result[i++] + '0');
-
-											}
-
-						_putchar('\n');
-
+	while (result[i] == 0 && i < len_result)
+	{
+		i++;
+	}
+	if (i == len_result)
+	{
+		_putchar('0');
+	}
+	while (i < len_result)
+	{
+		_putchar(result[i++] + '0');
+	}
+	_putchar('\n');
 }
-
 
 
 /**
+ * main - multiplies two positive numbers
  *
- *  * main - multiplies two positive numbers
+ * @argc: argument count
  *
- *   * @argc: argument count
+ * @argv: argument vector
  *
- *    * @argv: argument vector
- *
- *     * Return: void
- *
- *      */
+ * Return: void
+ */
 
 int main(int argc, char *argv[])
-
 {
+	int len_num1, len_num2, len_result;
+	char *num1, *num2;
+	int *result;
 
-		int len_num1, len_num2, len_result;
+	if (argc != 3)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	len_num1 = strlen(argv[1]);
+	len_num2 = strlen(argv[2]);
+	len_result = len_num1 + len_num2;
 
-			char *num1, *num2;
+	if (len_num1 < len_num2)
+	{
+		num1 = argv[1];
+		num2 = argv[2];
+	}
+	else
+	{
+		num1 = argv[2];
+		num2 = argv[1];
+		len_num1 = strlen(argv[2]);
+		len_num2 = strlen(argv[1]);
+	}
+	result = multiply(num1, len_num1, num2, len_num2, len_result);
 
-				int *result;
-
-
-
-					if (argc != 3)
-
-							{
-
-										printf("Error\n");
-
-												exit(98);
-
-													}
-
-						len_num1 = strlen(argv[1]);
-
-							len_num2 = strlen(argv[2]);
-
-								len_result = len_num1 + len_num2;
-
-									if (len_num1 < len_num2)
-
-											{
-
-														num1 = argv[1];
-
-																num2 = argv[2];
-
-																	}
-
-										else
-
-												{
-
-															num1 = argv[2];
-
-																	num2 = argv[1];
-
-																			len_num1 = strlen(argv[2]);
-
-																					len_num2 = strlen(argv[1]);
-
-																						}
-
-											result = multiply(num1, len_num1, num2, len_num2, len_result);
-
-												if (result == NULL)
-
-														{
-
-																	exit(98);
-
-																		}
-
-													print_result(result, len_result);
-
-
-
-														return (0);
-
+	if (result == NULL)
+	{
+		exit(98);
+	}
+	print_result(result, len_result);
+	return (0);	
 }
-
-
