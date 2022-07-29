@@ -14,7 +14,7 @@ void *malloc_checked(unsigned int b)
 {
 	void *arr;
 
-	arr = mallocss(sizeof(int  *b);
+	arr = malloc(sizeof(int)  *b);
 
 	if (arr == NULL)
 	{
