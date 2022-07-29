@@ -18,6 +18,7 @@ void add_arrays(int *arr1, int *arr2, int len_arrays)
 	int sum;
 	int carry = 0;
 	int index_arrays = len_arrays - 1;
+
 	while (i < len_arrays)
 	{
 		sum = carry + arr1[index_arrays] + arr2[index_arrays];
@@ -71,7 +72,9 @@ int *multiply(char *n1, int l1, char *n2, int l2, int lr)
 	int multiplier_digit_position = l1 - 1;
 	int digit;
 	int carry, value1, value2, product;
+
 	final_result = calloc(sizeof(int), lr);
+
 	while (i < l1)
 	{
 		mult_result = calloc(sizeof(int), lr);
@@ -178,5 +181,5 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	print_result(result, len_result);
-	return (0);	
+	return (0);
 }
