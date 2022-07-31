@@ -1,10 +1,13 @@
 #include "main.h"
 #include <stdlib.h>
 
+
 /**
  * malloc_checked - allocates memory using malloc
  *
- * @b: number of bytes to be allocated in memory
+ *
+ *
+ * @b: size of malloc
  *
  * Return: pointer to the allocated memory
  */
@@ -12,13 +15,11 @@
 
 void *malloc_checked(unsigned int b)
 {
-	void *arr;
+	void *ptr = malloc(b);
 
-	arr = malloc(b);
+	if (ptr == NULL)
 
-	if (arr == NULL)
-	{
 		exit(98);
-	}
-	return (arr);
+	
+	return (ptr);
 }
