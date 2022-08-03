@@ -3,6 +3,12 @@
 #define _CALC_H
 
 
+#include <stdio.h>
+
+#include <stdlib.h>
+
+#include <string.h>
+
 /**
  * struct op - Struct op
  *
@@ -18,13 +24,6 @@ typedef struct op
 	int (*f)(int a, int b);
 
 } op_t;
-
-
-#include <stdio.h>
-
-#include <stdlib.h>
-
-#include <string.h>
 
 
 /* Aditional prototypes */
