@@ -1,41 +1,44 @@
 #include "3-calc.h"
 
 /**
- * main - performs simpe operation
+ * main - check the code for Holberton School students.
  *
- * @argc: argument count
+ * @argc: argument count.
  *
- * @argv: argument vector
+ * @argv: argument vector.
  *
- * Return: 0 if success
+ * Return: Always 0.
  */
 
 int main(int argc, char *argv[])
 {
-	int a = 0;
-	int b = 0;
+	int a, b;
 
-	int (*func)(int, int);
-
-	int res = 0;
+	int (*operation)(int, int);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
-
 		exit(98);
 	}
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	func = get_op_func(argv[2]);
 
-	if (func == NULL)
+	if (argv[2][1])
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	res = func(a, b);
-	printf("%d\n", res);
 
+	operation = get_op_func(argv[2]);
+
+	if (operation == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	
+	printf("%d\n", operation(a, b));
 	return (0);
 }
